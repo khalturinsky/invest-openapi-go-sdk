@@ -140,7 +140,7 @@ func (c *RestClient) Operations(from time.Time, interval OperationInterval, figi
 	}
 
 	type response struct {
-		Payload []Operation `json:"payload"`
+		Payload []Operation `json:"payload.operations"`
 	}
 
 	var resp response
