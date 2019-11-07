@@ -1,4 +1,4 @@
-module github.com/khalturinky/invest-openapi-go-sdk
+module github.com/khalturinsky/invest-openapi-go-sdk
 
 go 1.13
 
