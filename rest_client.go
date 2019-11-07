@@ -140,7 +140,9 @@ func (c *RestClient) Operations(from time.Time, interval OperationInterval, figi
 	}
 
 	type response struct {
-		Payload []Operation `json:"payload.operations"`
+		Payload struct {
+			Operations []Operation `json:"operations"`
+		} `json:"payload"`
 	}
 
 	var resp response
@@ -148,7 +150,7 @@ func (c *RestClient) Operations(from time.Time, interval OperationInterval, figi
 		return nil, errors.Wrapf(err, "can't unmarshal response to %s, respBody=%s", path, respBody)
 	}
 
-	return resp.Payload, nil
+	return resp.Payload.Operations, nil
 }
 
 func (c *RestClient) Portfolio() (Portfolio, error) {
