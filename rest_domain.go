@@ -103,6 +103,7 @@ type Instrument struct {
 	MinPriceIncrement float64  `json:"minPriceIncrement"`
 	Lot               int      `json:"lot"`
 	Currency          Currency `json:"currency"`
+	Name              string   `json:"name"`
 }
 
 type Operation struct {
